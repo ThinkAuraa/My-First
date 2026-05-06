@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Funky Capture Chess</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="game-shell" aria-label="Chess game">
+        <div class="topbar">
+          <div>
+            <h1>Chess</h1>
+            <p id="status">White to move</p>
+          </div>
+          <div class="actions">
+            <button id="soundButton" type="button" aria-pressed="true">Sound on</button>
+            <button id="newGameButton" type="button">New game</button>
+          </div>
+        </div>
+
+        <div class="play-area">
+          <div id="board" class="board" role="grid" aria-label="Chess board"></div>
+
+          <aside class="side-panel" aria-label="Game information">
+            <h2>Captured</h2>
+            <div class="capture-group">
+              <span>White took</span>
+              <div id="whiteCaptured" class="captured"></div>
+            </div>
+            <div class="capture-group">
+              <span>Black took</span>
+              <div id="blackCaptured" class="captured"></div>
+            </div>
+
+            <h2>Moves</h2>
+            <ol id="moveList" class="moves"></ol>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div id="promotionDialog" class="promotion hidden" role="dialog" aria-modal="true" aria-label="Choose promotion piece">
+      <div class="promotion-panel">
+        <h2>Promote pawn</h2>
+        <div class="promotion-options">
+          <button type="button" data-piece="q">♛</button>
+          <button type="button" data-piece="r">♜</button>
+          <button type="button" data-piece="b">♝</button>
+          <button type="button" data-piece="n">♞</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
